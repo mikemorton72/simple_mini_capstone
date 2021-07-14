@@ -26,7 +26,6 @@ var app = new Vue({
         console.log(response.data);
         this.getProducts();
       });
-      console.log("look at me i am the captain now")
     },
     updateProduct: function () {
       //
