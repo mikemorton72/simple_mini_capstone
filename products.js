@@ -11,6 +11,13 @@ var app = new Vue({
     };
   },
   methods: {
+    getProducts: function () {
+      console.log("i run when created");
+      axios.get("http://localhost:3000/products").then(response => {
+        this.products = response.data;
+        // console.log(this.products);
+      });
+    },
     addProduct: function () {
       axios.post("http://localhost:3000/products", {
         name: this.newProductName,
@@ -20,13 +27,13 @@ var app = new Vue({
       }).then(response => {
         console.log(response.data);
       });
+      this.getProducts();
+    },
+    updateProduct: function () {
+      //
     }
   },
   created: function () {
-    console.log("i run when created");
-    axios.get("http://localhost:3000/products").then(response => {
-      this.products = response.data;
-      // console.log(this.products);
-    });
+    this.getProducts();
   }
 });

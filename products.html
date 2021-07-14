@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Products</title>
+    <title>Products Index</title>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="products.js" defer></script>
@@ -10,7 +10,8 @@
   <body>
     <div id="app">
       <h1>Index</h1>
-      <p v-for="product in products"> 
+      <p v-for="product in products">
+        id: {{ product.id }} <br>
         {{ product.name }} <br>
         {{ product.description }} <br>
         {{ product.price }} <br>
@@ -23,6 +24,14 @@
         <p>Image URL   <input type="text" v-model="newProductImageUrl"></p>
         <p><button v-on:click="addProduct">Add Product</button></p>
       </p>
+      <h1>Update Product</h1>
+      <!-- <p>
+        <p>Name   <input type="text" v-model="newProductName"></p>
+        <p>Description <input type="text" v-model="newProductDescription"></p>
+        <p>Price   <input type="text" v-model="newProductPrice"></p>
+        <p>Image URL   <input type="text" v-model="newProductImageUrl"></p>
+        <p><button v-on:click="addProduct">Add Product</button></p>
+      </p> -->
     </div>
   </body>
 </html>
