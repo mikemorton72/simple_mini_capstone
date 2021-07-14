@@ -12,10 +12,8 @@ var app = new Vue({
   },
   methods: {
     getProducts: function () {
-      console.log("i run when created");
       axios.get("http://localhost:3000/products").then(response => {
         this.products = response.data;
-        // console.log(this.products);
       });
     },
     addProduct: function () {
@@ -26,8 +24,9 @@ var app = new Vue({
         image_url: this.newProductImageUrl
       }).then(response => {
         console.log(response.data);
+        this.getProducts();
       });
-      this.getProducts();
+      console.log("look at me i am the captain now")
     },
     updateProduct: function () {
       //
