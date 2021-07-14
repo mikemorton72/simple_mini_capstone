@@ -4,7 +4,23 @@ var app = new Vue({
   data: function () {
     return {
       products: [],
+      newProductName: null,
+      newProductDescription: null,
+      newProductPrice: null,
+      newProductImageUrl: null
     };
+  },
+  methods: {
+    addProduct: function () {
+      axios.post("http://localhost:3000/products", {
+        name: this.newProductName,
+        description: this.newProductDescription,
+        price: this.newProductPrice,
+        image_url: this.newProductImageUrl
+      }).then(response => {
+        console.log(response.data);
+      });
+    }
   },
   created: function () {
     console.log("i run when created");

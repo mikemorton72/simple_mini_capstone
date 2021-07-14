@@ -17,7 +17,11 @@
       </p>
       <h1>Add Product</h1>
       <p>
-        <input>
+        <p>Name   <input type="text" v-model="newProductName"></p>
+        <p>Description <input type="text" v-model="newProductDescription"></p>
+        <p>Price   <input type="text" v-model="newProductPrice"></p>
+        <p>Image URL   <input type="text" v-model="newProductImageUrl"></p>
+        <p><button v-on:click="addProduct">Add Product</button></p>
       </p>
     </div>
   </body>

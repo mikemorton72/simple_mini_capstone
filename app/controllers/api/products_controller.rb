@@ -13,7 +13,7 @@ class Api::ProductsController < ApplicationController
                            image_url: params[:image_url]
                           )
 
-    if @product.save
+    if @product.save!
       render 'show.json.jbuilder'
     else
       render json: {errors: @product.errors.full_messages}, status: :unprocessable_entity
